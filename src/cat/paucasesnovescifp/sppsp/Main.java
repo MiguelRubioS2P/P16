@@ -1,5 +1,8 @@
 package cat.paucasesnovescifp.sppsp;
 
+import cat.paucasesnovescifp.sppsp.model.Cliente;
+import cat.paucasesnovescifp.sppsp.model.ClienteHilo;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -7,13 +10,14 @@ import java.net.Socket;
 public class Main {
     public static void main(String[] args) {
 
-        try {
+        ClienteHilo cliente1 = new ClienteHilo();
+        ClienteHilo cliente2 = new ClienteHilo();
+        ClienteHilo cliente3 = new ClienteHilo();
+        ClienteHilo cliente4 =  new ClienteHilo();
 
-            ServerSocket serverSocket = new ServerSocket(55054,3);
-            Socket socket = new Socket("127.0.0.1",55054);
-
-        } catch (IOException e) {
-            System.out.println("Error de socket: " + e.getMessage());
-        }
+        cliente1.start();
+        cliente2.start();
+        cliente3.start();
+        cliente4.start();
     }
 }
